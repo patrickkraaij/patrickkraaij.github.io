@@ -1,10 +1,13 @@
 {
   "name": "patrickkraaij.github.io",
   "version": "1.0.0",
-  "description": "My personal website",
-  "main": "index.js",
+	"private": true,
+  "description": "Patrick Kraaij's personal website",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node node_modules/http-server/bin/http-server .",
+    "prebuild": "cp node_modules/normalize.css/normalize.css node_modules/normalize.css/normalize.scss",
+    "build:css": "node-sass -o . scss/site.scss",
+    "build": "npm run build:css"
   },
   "repository": {
     "type": "git",
@@ -12,8 +15,10 @@
   },
   "author": "Patrick Kraaij",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/patrickkraaij/patrickkraaij.github.io/issues"
-  },
-  "homepage": "https://github.com/patrickkraaij/patrickkraaij.github.io#readme"
+  "homepage": "https://github.com/patrickkraaij/patrickkraaij.github.io#readme",
+  "devDependencies": {
+    "http-server": "^0.9.0",
+    "node-sass": "^4.5.0",
+		"normalize.css": "^5.0.0"
+  }
 }
