@@ -1,0 +1,38 @@
+root = true
+
+[*]
+charset = utf-8
+indent_style = tab
+insert_final_newline = true
+trim_trailing_whitespace = true
+spaces_around_operators = true
+spaces_around_brackets = true
+indent_brace_style = K&R
+max_line_length = off
+end_of_line = lf
+
+[*.{md,markdown}]
+indent_style = ignore
+insert_final_newline = ignore
+trim_trailing_whitespace = ignore
+
+[{package.json}]
+indent_size = 2
+indent_style = space
+
+[{.DS_Store,{dist,build,node_modules,test}/**}]
+charset = ignore
+indent_size = ignore
+indent_style = ignore
+insert_final_newline = ignore
+tab_width = ignore
+trim_trailing_whitespace = ignore
+
+
+
+
+
+
+
+
+
