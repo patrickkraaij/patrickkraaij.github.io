@@ -1,13 +1,15 @@
 {
   "name": "patrickkraaij.github.io",
   "version": "1.0.0",
-	"private": true,
+  "private": true,
   "description": "Patrick Kraaij's personal website",
   "scripts": {
-    "start": "node node_modules/http-server/bin/http-server .",
-    "prebuild": "cp node_modules/normalize.css/normalize.css node_modules/normalize.css/normalize.scss",
-    "build:css": "node-sass -o . scss/site.scss",
-    "build": "npm run build:css"
+    "start": "node node_modules/http-server/bin/http-server build",
+    "prebuild": "rm -rf build/ && cp node_modules/normalize.css/normalize.css node_modules/normalize.css/normalize.scss",
+    "build:css": "node-sass -o build scss/site.scss",
+    "build:assets": "cp assets/* build",
+    "build:html": "html-minifier --collapse-whitespace -o build/index.html index.html",
+    "build": "npm run build:css && npm run build:assets && npm run build:html"
   },
   "repository": {
     "type": "git",
@@ -17,8 +19,9 @@
   "license": "MIT",
   "homepage": "https://github.com/patrickkraaij/patrickkraaij.github.io#readme",
   "devDependencies": {
+    "html-minifier": "^3.4.1",
     "http-server": "^0.9.0",
     "node-sass": "^4.5.0",
-		"normalize.css": "^5.0.0"
+    "normalize.css": "^5.0.0"
   }
 }

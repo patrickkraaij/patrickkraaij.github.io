@@ -2,6 +2,7 @@
 # Created by https://www.gitignore.io/api/visualstudiocode,webstorm,node
 
 ### VisualStudioCode ###
+.vscode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -111,4 +112,4 @@ jspm_packages
 .yarn-integrity
 
 # website specific
-site.css
+build
